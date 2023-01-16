@@ -1,0 +1,440 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+    <div class="container">
+        
+        <!-- Image Logo -->
+        <a class="navbar-brand logo-image" href="{% url 'index' %}"><img src="{% static 'images/dkfix.png' %}" alt="alternative"></a>  
+
+        <!-- Text Logo - Use this if you don't have a graphic logo -->
+        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Mark</a> -->
+
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <div class="d-flex">
+                        {% if request.user.is_authenticated %}
+                        <li class="nav-item dropdown">
+                            <img class="nav-link dropdown-toggle usera-image rounded-circle m-auto dropdown-toggle" src="{% static 'images/pro.jpg' %}" alt="Bloggingwithdk" width="70" height="70" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                {% comment %} <a class="dropdown-item page-scroll"></a><p>{{user.username}}</p> {% endcomment %}
+                                <p class="dropdown-item page-scroll">{{user.username}}</p>
+                                <a class="dropdown-item page-scroll" href="{% url 'logout' %}">Log Out</a>
+                            
+                            </div>
+                        </li>
+                        {% else %}
+                            <a class="btn btn-outline-danger text-white mr-1" href="{% url 'login' %}">Login</a>
+                            <a class="btn btn-outline-danger text-white mr-1" href="{% url 'register' %}">Register</a>
+                        {% endif %}	
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-danger text-white mr-1" href="{% url 'index' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-danger text-white mr-1" href="#about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-danger text-white mr-1" href="#services">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="btn btn-outline-danger text-white mr-1" href="#contact">Contact</a>
+                </li>
+                
+            </ul>
+        </div> <!-- end of navbar-collapse -->
+    </div> <!-- end of container -->
+</nav> <!-- end of navbar -->
+<!-- end of navigation -->
+
+
+<!-- Header -->
+<header id="header" class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="text-container">
+                    <h1 class="h1-large">I love to create beautiful and efficient websites</h1>
+                    <a class="btn-solid-lg page-scroll" href="#about">Discover</a>
+                    <a class="btn-outline-lg page-scroll" href="#contact"><i class="fa fa-map-marker"></i> Contact Me</a>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</header> <!-- end of header -->
+<!-- end of header -->
+
+<!-- About-->
+<div id="about" class="basic-1 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-container first">
+                    <h2>Hi there I'm Dillip Singh,</h2>
+                    <p>And I love to create beautiful and efficient websites for my customers. 
+                        I love going through the entire process with the customer from concept, 
+                        to design and then development and launch.</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Qualification & Education</h3>
+                <div class="text-container second">
+                    <h6 style="color:blue;">Kurukshetra University, India</h6>
+                    <h6 style="color:blue;">Karnal Institute Of Technology and Management, Karnal, India.</h6>
+                    <div class="time">2015 to 2020 Dec</div>
+                    <p>Bachelor In Computer Science Engineering</br>
+                    Scaled Marks : 70.00 %</p>
+                    <h6 style="color:blue;">Higher Secondary English Board(HSEB)</h6>
+                    <h6 style="color:blue;">Canvas International College,Kathmandu,Nepal</h6>
+                    <div class="time">2012 to 2014</div>
+                    <p>Higher Eduaction</br>
+                    Scaled Marks : 60.00 %</p>
+                    <h6 style="color:blue;">School Leaving Certificate Board(SLC)</h6>
+                    <h6 style="color:blue;">Monastic Higher Secondary English Boarding School, Janakpur, Nepal</h6>
+                    <div class="time">2001 to 2011</div>
+                    <p>High school eduaction</br>
+                    Scaled Marks : 66.00 %</p>
+                    
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <h3>Working and Tranning skills</h3>
+                <div class="text-container third">
+                    <div class="time">2022 to 2022 Dec</div>
+                    <h6>Ekghanti services pvt. ltd., Kathmandu</h6>
+                    <p>Working as a Backend Developer(Python/Django Developer)</p>
+                    <div class="time">2019-08-00 to 2019-10-31</div>
+                    <h6>JP Tins pvt. ltd, Karnal</h6>
+                    <p>Python/Django Developer</p>
+                    <div class="time">2019-05-00 to 2022-08-00</div>
+                    <h6>Daily mails,Noida</h6>
+                    <p>Python Developer</p>
+                    <div class="time">2018-06-00 to 2018-08-00</div>
+                    <h6>Unique Instrumrnt and Control, Noida</h6>
+                    <p>Python Developer</p>
+                    
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-1 -->
+<!-- end of about -->
+
+
+<!-- Services -->
+<div id="services" class="basic-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h2-heading">Offered services</h2>
+                <p class="p-heading">Web design and development have been my bread and butter for more than 2 years. During that time I've discovered that I can help startups and companies with the following services</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-box">                    
+                    <img style="width:100px; heigth:100px;" src="{% static 'images/design1.png' %}" alt="alternative">
+                    <h4>DESIGN</h4>
+                    <p>Successful online projects start with good design. It establishes a solid foundation for future development and allows for long term growth</p>
+                </div> <!-- end of text-box -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-box">
+                    <img style="width:100px; heigth:100px;" src="{% static 'images/deployment.jpg' %}">
+                    <h4>DEVELOPMENT</h4>
+                    <p>I can code my own designs or even use the customer's design as base. My focus is to generate clean code that's well structured for reliability</p>
+                </div> <!-- end of text-box -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-box">
+                    <img style="width:100px; heigth=100px;" src="{% static 'images/seo.png' %}" alt="alternative">
+                    <h4>BASIC SEO</h4>
+                    <p>i can setup your project to use basic SEO principles which will push your project to the first page on search engines and save you ads money</p>
+                </div> <!-- end of text-box -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-2 -->
+<!-- end of services -->
+
+
+<!-- Details -->
+<div class="split">
+    <div class="area-1">
+    </div><!-- end of area-1 on same line and no space between comments to eliminate margin white space --><div class="area-2 bg-gray">
+        <div class="container">    
+            <div class="row">
+                <div class="col-lg-12">     
+                    
+                    <!-- Text Container -->
+                    <div class="text-container">
+                        <h2>Why Work With Me</h2>
+                        <p>I am a great communicator and love to invest the necessary time to understand the customer's problem very well</p>
+                        <h5>DESIGN TOOLS</h5>
+                        <p>My favorite design tools for Backend and Database are Python, Django, DRF, Mysql, PostgreSQL and other third party 
+                            tools like Websocket, Redis, phpmyadmin,pandas, celery, auth0, api, and others. and for Frontend developmnt i like to use
+                            javascript, htmx, html, css, ajax, bootstrap, and others.</p>
+                        <h5>DEVELOPMENT SKILLS</h5>
+                        <p>I am familiar and work on a daily basis with HTML, CSS, JavaScript, Python, Django, Ajax, Htmx, Bootstrap and other modern frameworks to build a dynamic web applications.</p>
+                    
+                    </div> <!-- end of text-container -->
+                    <!-- end of text container -->
+
+                </div> <!-- end of col -->
+            </div> <!-- end of row -->
+        </div> <!-- end of container -->
+    </div> <!-- end of area-2 -->
+</div> <!-- end of split -->
+<!-- end of details -->
+
+
+<!-- Projects -->
+<div id="projects" class="basic-3">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="h2-heading">Technology worked with</h2>
+                <p class="p-heading">Listed below are some of the most representative tools I've worked on. They range from basic web design for presentation sites to advanced web development for online Applications.</p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="text-container">
+                    <h3>Websocket</h3>
+                    <div class="image-container">
+                        <a href="https://channels.readthedocs.io/en/stable/">
+                        <img class="img-fluid" style="width:1000px" src="{% static 'images/websocket.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p>Channels is a project that takes Django and extends its abilities beyond HTTP - to handle WebSockets, chat protocols, IoT protocols, and more. It's built on a Python specification called ASGI</p>
+                </div> <!-- end of text-container -->
+                <div class="text-container">
+                    <h3>Django-Celery</h3>
+                    <div class="image-container">
+                        <a href="https://docs.celeryq.dev/en/stable/django/first-steps-with-django.html">
+                            <img class="img-fluid" style="width:1000px" src="{% static 'images/celery.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p>Django-celery provides Celery integration for Django; Using the Django ORM and cache backend for storing results, autodiscovery of task modules for applications listed in INSTALLED_APPS, and more. 
+                        Celery is a task queue/job queue based on distributed message passing.</p>
+                </div> <!-- end of text-container -->
+                <div class="text-container">
+                    <h3>Authentications and Authorizations</h3>
+                    <div class="image-container">
+                        <a href="https://docs.djangoproject.com/en/4.1/topics/auth/">
+                            <img class="img-fluid" style="width:1000px" src="{% static 'images/auth.jpeg' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p>The Django authentication system handles both authentication and authorization. Briefly, authentication verifies a user is who they claim to be, and authorization determines what an authenticated user is allowed to do</p>
+                </div> <!-- end of text-container -->
+                <div class="text-container">
+                    <h3>Django ORM</h3>
+                    <div class="image-container">
+                        <a href="https://docs.djangoproject.com/en/4.1/topics/db/queries/">
+                            <img class="img-fluid" style="width:1000px" src="{% static 'images/orm.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p>ORM stands for Object Relational Mapper. The main goal of ORM is to send data between a database and models in an application. It maps a relation between the database and a model</p>
+                </div> <!-- end of text-container -->
+                <div class="text-container">
+                    <h3>Django Rest Framework</h3>
+                    <div class="image-container">
+                        <a href="https://www.django-rest-framework.org/">
+                            <img class="img-fluid" style="width:1000px" src="{% static 'images/rest.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p>Django REST framework i a powerfull and flexible toolkit for building Web APIs.</p>
+                </div> <!-- end of text-container -->
+                <div class="text-container">
+                    <h3>Django Social-media Login</h3>
+                    <div class="image-container">
+                        <a href="project.html">
+                            <img class="img-fluid" style="width:1000px" src="{% static 'images/social_login.jpg' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p>Django support several other services and the process should be somewhat similar. The social-auth-app-django library have several customization options, which sometimes makes 
+                        it challenging to get started. So for this tutorial I will guide you through the mandatory steps where in the end you will have a fully functional social authentication.</p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-3 -->
+<!-- end of projects -->
+
+
+<!-- Works -->
+<div class="basic-4">
+    <div class="container">
+        <h2 class="h2-heading">Technology & tools</h2>
+        <div class="row">
+            
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://www.python.org/">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/python.ico' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Python</strong>Python is an interpreted, object-oriented, high-level programming language with dynamic semantics. 
+                        Its high-level built in data structures, combined with dynamic typing and dynamic binding, make it very attractive for 
+                        Rapid Application Development, as well as for use as a scripting or glue language to connect existing components together. 
+                        <a class="blue" href="https://www.python.org/">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://www.djangoproject.com/">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/django.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Django</strong> Django is a high-level Python web framework that encourages rapid development and clean, 
+                        pragmatic design. Built by experienced developers, it takes care of much of the hassle of web development, so you 
+                        can focus on writing your app without needing to reinvent the wheel. It's free and open source.<a class="blue" href="https://www.djangoproject.com/">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://www.javascript.com/">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/js.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>JavaScript</strong>JavaScript (JS) is a lightweight, interpreted, or just-in-time compiled programming language with first-class functions. While it is most 
+                        well-known as the scripting language for Web pages, many non-browser environments also use it, such as Node.js, Apache CouchDB and Adobe Acrobat <a class="blue" href="https://www.javascript.com/">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://html.com/">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/html.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>HTML</strong>
+                        HTML stands for Hyper Text Markup Language
+                        HTML is the standard markup language for creating Web pages
+                        HTML describes the structure of a Web page
+                        HTML consists of a series of elements
+                        HTML elements tell the browser how to display the content
+                        HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
+                    <a class="blue" href="https://html.com/">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://en.wikipedia.org/wiki/CSS">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/css.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>CSS</strong>
+                        CSS stands for Cascading Style Sheets
+                        CSS describes how HTML elements are to be displayed on screen, paper, or in other media
+                        CSS saves a lot of work. It can control the layout of multiple web pages all at once
+                        External stylesheets are stored in CSS files
+                    <a class="blue" href="https://en.wikipedia.org/wiki/CSS">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://htmx.org/docs/#introduction">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/htmx.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>HTMX</strong>Htmx is a library that allows you to access modern browser features directly from HTML, rather than using javascript. <a class="blue" href="https://htmx.org/docs/#introduction">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://www.docker.com/">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/docker.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Docker</strong>Docker is an open platform for developing, shipping, and running applications. Docker enables you to separate your applications from your 
+                        infrastructure so you can deliver software quickly. With Docker, you can manage your infrastructure in the same ways you manage your applications. By taking advantage of Docker's 
+                        methodologies for shipping, testing, and deploying code quickly, you can significantly reduce the delay between writing code and running it in production. <a class="blue" href="https://www.docker.com/">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://jquery.com/">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/ajax.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>Ajax</strong> jQuery Ajax
+                        jQuery ajax() method. AJAX is an acronym for Asynchronous JavaScript and XML. It is a group of inter-related technologies like JavaScript, DOM, XML, HTML/XHTML, CSS, XMLHttpRequest etc. 
+                        It allows us to send and receive data asynchronously without reloading the web page. So it is fast. <a class="blue" href="https://jquery.com/">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+            <div class="col-lg-4">
+                <div class="text-container">
+                    <div class="image-container">
+                        <a href="https://www.mysql.com/">
+                            <img class="img-fluid" style="width:100px; heigth:100px;" src="{% static 'images/mysql.png' %}" alt="alternative">
+                        </a>
+                    </div> <!-- end of image-container -->
+                    <p><strong>MySql</strong> MySQL is one of the most recognizable technologies in the modern big data ecosystem. Often called the most popular database and
+                         currently enjoying widespread, effective use regardless of industry, it's clear that anyone involved with enterprise data or general IT should at 
+                         least aim for a basic familiarity of MySQL.<a class="blue" href="https://www.mysql.com/">details</a></p>
+                </div> <!-- end of text-container -->
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of basic-4 -->
+<!-- end of works -->
+
+
+
+<!-- Contact -->
+<div id="contact" class="form-1 bg-gray">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2>Contact details</h2>
+                <p class="p-heading">For any type of online project please don't hesitate to get in touch with me. The fastest way is to send me your message using the following email <a class="blue no-line" href="#dk381759@gmail.com">dk381759@gmail.com</a></p>
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+        <div class="row">
+            <div class="col-lg-12">
+                
+                <!-- Contact Form  id="contactForm"-->
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control-input" id="name" name="name" required>
+                        <label class="label-control" for="name">Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control-input" id="email" name="email" required>
+                        <label class="label-control" for="email">Email</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea type="text" class="form-control-textarea" id="message" name="message" required></textarea>
+                        <label class="label-control" for="message">Project details</label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="form-control-submit-button">Submit</button>
+                    </div>
+                </form>
+                <!-- end of contact form -->
+
+            </div> <!-- end of col -->
+        </div> <!-- end of row -->
+    </div> <!-- end of container -->
+</div> <!-- end of form-1 -->  
+<!-- end of contact -->
+
+{% endblock content %}
