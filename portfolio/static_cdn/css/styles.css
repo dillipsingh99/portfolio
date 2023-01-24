@@ -519,7 +519,7 @@ input[type='checkbox'] {
 .header {
 	padding-top: 7rem;
 	padding-bottom: 5.5rem;
-	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/dark-header-dk.png') center center no-repeat;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/edited_dk.jpg') center center no-repeat;
 	/* background: black, url('../images/hader-singh.png') center center no-repeat; */
 	background-size: cover;
 	text-align: center;
@@ -527,12 +527,12 @@ input[type='checkbox'] {
 
 .header .h1-large {
 	margin-bottom: 1.75rem;
-	color: #ffffff;
+	color: #040404;
 }
 
 .header .btn-solid-lg:hover {
-	border: 1px solid #ffffff;
-	color: #ffffff;
+	border: 1px solid #e50a0a;
+	color: #c80b0b;
 }
 
 .header .btn-outline-lg {
@@ -576,6 +576,10 @@ input[type='checkbox'] {
 .basic-1 h6 {
 	margin-bottom: 0.125rem;
 }
+.card{
+	width: 12rem;
+	height:12rem;
+}
 
 
 /********************/
@@ -618,8 +622,8 @@ input[type='checkbox'] {
 /*     Details     */
 /*******************/
 .split .area-1 {
-	height: 430px;
-	background: linear-gradient(to bottom right, rgba(25, 26, 29, 0.5), rgba(25, 26, 29, 0.5)), url('../images/') center center no-repeat;
+	height: 460px;
+	background: linear-gradient(to bottom right, rgba(25, 26, 29, 0.5), rgba(25, 26, 29, 0.5)), url('../images/dk.jpg') center center no-repeat;
 	background-size: cover;
 }
 
@@ -667,6 +671,9 @@ input[type='checkbox'] {
 
 .basic-3 .image-container {
 	margin-bottom: 1rem;
+	width:25rem;
+	height:20rem;
+
 }
 
 /* Hover Animation */
@@ -1277,3 +1284,24 @@ a:hover.back-to-top {
 	/* end of extra pages */
 }
 /* end of min-width 1200px */
+
+.footer-icons{
+margin-top: 25px;
+}
+
+.footer-icons a{
+display: inline-block;
+width: 35px;
+height: 35px;
+cursor: pointer;
+background-color:  #33383b;
+border-radius: 2px;
+
+font-size: 20px;
+color: #ffffff;
+text-align: center;
+line-height: 35px;
+
+margin-right: 3px;
+margin-bottom: 5px;
+}
