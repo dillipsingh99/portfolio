@@ -517,7 +517,7 @@ input[type='checkbox'] {
 /*     Header     */
 /******************/
 .header {
-	padding-top: 7rem;
+	padding-top: 20rem;
 	padding-bottom: 5.5rem;
 	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/edited_dk.jpg') center center no-repeat;
 	/* background: black, url('../images/hader-singh.png') center center no-repeat; */
@@ -526,8 +526,8 @@ input[type='checkbox'] {
 }
 
 .header .h1-large {
-	margin-bottom: 1.75rem;
-	color: #040404;
+	margin-bottom: 0.50rem;
+	color: #fefcfc;
 }
 
 .header .btn-solid-lg:hover {
