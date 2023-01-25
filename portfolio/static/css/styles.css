@@ -423,8 +423,8 @@ input[type='checkbox'] {
 }
 
 .navbar .nav-item .nav-link {
-	padding-top: 0.625rem;
-	padding-bottom: 0.625rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem;
 	color: #ffffff;
 	text-decoration: none;
 	transition: all 0.2s ease;
@@ -511,8 +511,11 @@ input[type='checkbox'] {
 	border: none;
 	font-size: 1.25rem;
 }
-
-
+#dropdown01 {
+	width:60px;
+	height:60px;
+	margin-left:1rem;	
+}
 /******************/
 /*     Header     */
 /******************/

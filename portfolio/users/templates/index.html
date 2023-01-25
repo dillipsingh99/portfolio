@@ -17,25 +17,8 @@
 
         <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <div class="d-flex">
-                        {% if request.user.is_authenticated %}
-                        <li class="nav-item dropdown">
-                            <img class="nav-link dropdown-toggle usera-image rounded-circle m-auto dropdown-toggle" src="{% static 'images/pro.jpg' %}" alt="Bloggingwithdk" width="70" height="70" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <div class="dropdown-menu" aria-labelledby="dropdown01">
-                                {% comment %} <a class="dropdown-item page-scroll"></a><p>{{user.username}}</p> {% endcomment %}
-                                <p class="dropdown-item page-scroll">{{user.username}}</p>
-                                <a class="dropdown-item page-scroll" href="{% url 'logout' %}">Log Out</a>
-                            
-                            </div>
-                        </li>
-                        {% else %}
-                            <a class="btn btn-outline-danger text-white mr-1" href="{% url 'login' %}">Login</a>
-                            <a class="btn btn-outline-danger text-white mr-1" href="{% url 'register' %}">Register</a>
-                        {% endif %}	
-                    </div>
-                </li>
-                <li class="nav-item">
+            
+                <li class="nav-item logo-image">
                     <a class="btn btn-outline-danger text-white mr-1" href="{% url 'index' %}">Home</a>
                 </li>
                 <li class="nav-item">
@@ -46,6 +29,27 @@
                 </li>
                 <li class="nav-item">
                     <a class="btn btn-outline-danger text-white mr-1" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item">
+                    {% comment %} <div class="d-flex"> {% endcomment %}
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                        {% comment %} <img class="nav-link dropdown-toggle usera-image rounded-circle m-auto dropdown-toggle" src="{% static 'images/pro.jpg' %}" alt="Bloggingwithdk" width="60" height="60" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {% endcomment %}
+                        <img class="dropdown-toggle rounded-circle dropdown-toggle" src="{% static 'images/pro.jpg' %}" alt="Bloggingwithdk" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <div class="dropdown-menu" aria-labelledby="dropdown01">
+                            {% comment %} <a class="dropdown-item page-scroll"></a><p>{{user.username}}</p> {% endcomment %}
+                            <p class="dropdown-item page-scroll">{{user.username}}</p>
+                            <a class="dropdown-item page-scroll" href="{% url 'logout' %}">Log Out</a>
+                        
+                        </div>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="btn btn-outline-danger text-white mr-1" href="{% url 'login' %}">Login</a>
+                        <a class="btn btn-outline-danger text-white mr-1" href="{% url 'register' %}">Register</a>
+                    </li>
+                    {% endif %}	
+                    {% comment %} </div> {% endcomment %}
                 </li>
                 
             </ul>
